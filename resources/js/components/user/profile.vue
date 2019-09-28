@@ -45,15 +45,7 @@
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <label>User Id</label>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <p>{{dataBasic.id}}</p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <label>Gender</label>
+                                        <label>Giới tính</label>
                                     </div>
                                     <div class="col-md-6">
                                         <p>{{dataBasic.gender?'Male':'Female'}}</p>
@@ -61,7 +53,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <label>Birthday</label>
+                                        <label>Sinh nhật</label>
                                     </div>
                                     <div class="col-md-6">
                                         <p>{{dataBasic.birthday}}</p>
@@ -77,7 +69,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <label>Phone</label>
+                                        <label>Số điện thoại</label>
                                     </div>
                                     <div class="col-md-6">
                                         <p>{{dataBasic.phone}}</p>
@@ -85,7 +77,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <label>Address</label>
+                                        <label>Địa chỉ</label>
                                     </div>
                                     <div class="col-md-6">
                                         <p>{{dataBasic.address}}</p>

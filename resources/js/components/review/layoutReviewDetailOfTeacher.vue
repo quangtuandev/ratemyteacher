@@ -62,9 +62,9 @@
                                 <button @click="deleteReview" to=""><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
                             </template>
                             <template v-else>
-                                <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> Drop heart</a>
+                                <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i>  Yêu thích</a>
                             </template>
-                            <a href="#"><i class="fa fa-share-square-o" aria-hidden="true"></i> Share</a>
+                            <a href="#"><i class="fa fa-share-square-o" aria-hidden="true"></i> Chia sẻ </a>
                         </div>
                     </div>
                 </section>
@@ -90,7 +90,7 @@ export default {
         this.review.created = moment(this.review.created_at).format('Do MMMM YYYY, h:mm ')
     },
     computed: mapState('auth', {
-            user: state => state.user,  
+            user: state => state.user,
     }),
     methods:{
         deleteReview(){
@@ -106,7 +106,7 @@ export default {
     }
 }
 </script>
-<style lang="scss" scoped> 
+<style lang="scss" scoped>
 .card.card--related{
     margin-top:10px;
 }

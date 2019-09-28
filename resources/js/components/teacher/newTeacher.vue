@@ -20,31 +20,31 @@
             <div class="tab-pane" id="edit">
                 <form role="form" @submit.prevent="addTeacher">
                     <div class="form-group row">
-                        <label class="col-lg-3 col-form-label form-control-label">Name</label>
+                        <label class="col-lg-3 col-form-label form-control-label">Tên</label>
                         <div class="col-lg-9">
                             <input v-model="teacher.name" class="form-control" type="text" placeholder="Jane">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-lg-3 col-form-label form-control-label">phone</label>
+                        <label class="col-lg-3 col-form-label form-control-label">Số điện thoại</label>
                         <div class="col-lg-9">
                             <input v-model="teacher.phone" class="form-control" type="text" placeholder="0123456789">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-lg-3 col-form-label form-control-label">email</label>
+                        <label class="col-lg-3 col-form-label form-control-label">Email</label>
                         <div class="col-lg-9">
                             <input v-model="teacher.email" class="form-control" type="text" placeholder="example@example.com">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-lg-3 col-form-label form-control-label">birthday</label>
+                        <label class="col-lg-3 col-form-label form-control-label">Ngày sinh</label>
                         <div class="col-lg-9">
                             <input v-model="teacher.birthday" class="form-control" type="date">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-lg-3 col-form-label form-control-label">gender</label>
+                        <label class="col-lg-3 col-form-label form-control-label">Giới tính</label>
                         <div class="col-lg-9">
                             <select id="user_time_zone" v-model="teacher.gender" class="form-control" size="0">
                                 <option value="0">Male</option>
@@ -53,25 +53,25 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-lg-3 col-form-label form-control-label">address</label>
+                        <label class="col-lg-3 col-form-label form-control-label">Địa chỉ</label>
                         <div class="col-lg-9">
                             <input  v-model="teacher.address" class="form-control" type="text" value="">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-lg-3 col-form-label form-control-label">specialize</label>
+                        <label class="col-lg-3 col-form-label form-control-label">Chuyên môn</label>
                         <div class="col-lg-9">
                             <input v-model="teacher.specialize" class="form-control" type="text" value="">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-lg-3 col-form-label form-control-label">description</label>
+                        <label class="col-lg-3 col-form-label form-control-label">Mô tả</label>
                         <div class="col-lg-9">
                             <textarea v-model="teacher.description" name="description" class="form-control"></textarea>
                         </div>
                     </div>
-                    
-                    
+
+
                     <div class="form-group row">
                         <label class="col-lg-3 col-form-label form-control-label"></label>
                         <div class="col-lg-9">
@@ -103,10 +103,10 @@ export default {
                 description:'',
                 phone:'',
                 image:'',
-                email:'' 
+                email:''
             },
             loadding : false
-        }   
+        }
     },
     methods:{
         addTeacher(){
@@ -120,17 +120,17 @@ export default {
                     noty({type: 'error', text: "Don't create your teacher", force: true})
                     this.$Progress.fail()
                 })
- 
+
             // })
         },
-        
+
         onFileChange(event){
             this.loadding = true;
             let formData = new FormData()
             $.each(event.currentTarget.files, (i, file) => {
                 formData.append('file', file)
             })
-            post(uploadFile,formData)       
+            post(uploadFile,formData)
             .then(res=>{
                 this.teacher.image = 'images/'+res.data
                 this.loadding = false;
@@ -139,7 +139,7 @@ export default {
                 console.log(err)
             })
         },
-        
+
     }
 }
 </script>

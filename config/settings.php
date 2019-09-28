@@ -8,7 +8,7 @@ return [
     'paginate_review' => 5,
     'flag_join' => 'join',
     'locale' => ['vi', 'en'],
-    
+
     'value_of_settings' => [
         'status' => [ // key of setting
             'private' => 0,
@@ -17,9 +17,10 @@ return [
     ],
 
     'notifications' => 'notifications',
-    
+
     'is_manager' => 1,
     'not_manager' => 0,
     'default_avatar' => '/images/default_avatar.png',
-    
+    'client_id' => env('CLIENT_ID'),
+    'client_secret' => env('CLIENT_SECRET'),
 ];

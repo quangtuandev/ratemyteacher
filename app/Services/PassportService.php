@@ -17,11 +17,11 @@ class PassportService
 
     public function requestGrantToken($input, $scope = '')
     {
-        $response = $this->client->post('127.0.0.1:8001/oauth/token', [
+        $response = $this->client->post('http://127.0.0.1:8001/oauth/token', [
             'form_params' => [
                 'grant_type' => 'password',
-                'client_id' => env('CLIENT_ID'),
-                'client_secret' => env('CLIENT_SECRET'),
+                'client_id' => config('settings.client_id'),
+                'client_secret' => config('settings.client_secret'),
                 'username' => $input['email'],
                 'password' => $input['password'],
                 'scope' => $scope,

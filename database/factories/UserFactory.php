@@ -12,8 +12,10 @@ use Faker\Generator as Faker;
 | model instances for testing / seeding your application's database.
 |
 */
+use App\Models\User;
+use App\Models\Role;
 
-$factory->define(App\Models\User::class, function (Faker $faker) {
+$factory->define(User::class, function (Faker $faker) {
     return [
     'name'           => $faker->name,
     'email'          => $faker->unique()->safeEmail,
@@ -28,13 +30,21 @@ $factory->define(App\Models\User::class, function (Faker $faker) {
     'about'          => $faker->text(),
     ];
 });
-use App\Models\Role;
+
 $factory->define(Role::class, function (Faker $faker) {
     static $typeId;
 
     return [
         'name' => $faker->word,
         'type' => $faker->randomElement([1, 2]),
+    ];
+});
+
+$factory->state(User::class, Role::ROLE_ADMIN, function () {
+    return [
+        'name' => 'Admin',
+        'email' => 'admin@gmail.com',
+        'status' => User::ACTIVE,
     ];
 });
 
@@ -56,7 +66,7 @@ $factory->define(Teacher::class, function (Faker $faker) {
         'identity_card' => $faker->creditCardNumber,
         'email' => $faker->safeEmail,
         'user_id' => function () {
-            return factory(App\Models\User::class)->create()->id;
+            return factory(User::class)->create()->id;
         },
     ];
 });
@@ -75,7 +85,7 @@ $factory->define(ReviewTeacher::class, function (Faker $faker) {
         'number_of_likes' => $voting_helpful,
         'rating' => $rating,
         'user_id' => function () {
-            return factory(App\Models\User::class)->create()->id;
+            return factory(User::class)->create()->id;
         },
         'teacher_id' => function () {
             return factory(App\Models\Teacher::class)->create()->id;

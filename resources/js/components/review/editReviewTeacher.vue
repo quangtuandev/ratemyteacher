@@ -15,7 +15,7 @@
                 <div class="rating-star">
                     <span class="field-name">Rating</span>
                     <div class="star-selector__descriptions">
-                    <span>Hover over stars or click to rate.</span>
+                    <span>Di chuột qua các ngôi sao hoặc nhấp để xếp hạng.</span>
                     </div>
                     <div class="quick-evaluate__rating">
                     <div class="quick-evaluate__rating-evaluate">
@@ -54,23 +54,23 @@
                     </div>
                 </div>
                 <div class="star-selector__descriptions">
-                    <span v-if="review.rating == 1" >1 star: Bad – unacceptable experience, unreasonable and rude conduct.</span>
-                    <span v-if="review.rating == 2" >2 stars: Poor – an inadequate experience with a lot of friction.</span>
-                    <span v-if="review.rating == 3" >3 stars: Average – acceptable experience but with some friction.</span>
-                    <span v-if="review.rating == 4" >4 stars: Great – decent treatment and very little friction.</span>
-                    <span v-if="review.rating == 5" >5 stars: Excellent – no reservations, I would recommend this company to anyone.</span>
+                    <span v-if="review.rating == 1" >1 star: Xấu - kinh nghiệm không thể chấp nhận, hành vi vô lý và thô lỗ.</span>
+                    <span v-if="review.rating == 2" >2 stars: Kém - một trải nghiệm không đầy đủ với nhiều ý kiến trái chiều.</span>
+                    <span v-if="review.rating == 3" >3 stars: Trung bình – kinh nghiệm chấp nhận được nhưng với một số ý kiến trái chiều.</span>
+                    <span v-if="review.rating == 4" >4 stars: Tuyệt vời – đối xử tử tế và rất ít ý kiến trái chiều.</span>
+                    <span v-if="review.rating == 5" >5 stars: Xuất sắc – sẽ giới thiệu với bất cứ ai muốn học.</span>
                 </div>
                 </div>
                 <div class="rating-content">
-                <span class="field-name">Your review</span>
-                <textarea class="content-main-rate" v-model="review.description" placeholder="Share your honest experience, and help others make better choices."></textarea>
+                <span class="field-name">Ý kiến đánh giá của bạn</span>
+                <textarea class="content-main-rate" v-model="review.description" placeholder="Chia sẻ kinh nghiệm trung thực của bạn và giúp người khác đưa ra lựa chọn tốt hơn."></textarea>
                 </div>
                 <div class="rating-title">
-                <span class="field-name">Title of your review</span>
+                <span class="field-name">Tiêu đề</span>
                 <input type="text" class="content-main-rate" v-model="review.name">
                 </div>
                 <div class="submit-button">
-                    <input class="btn btn-success btn-lg btn-rv" type="submit" value="Post your review now">
+                    <input class="btn btn-success btn-lg btn-rv" type="submit" value="Hoàn tất">
                 </div>
                 </form>
             </div>
@@ -194,7 +194,7 @@ input.content-main-rate {
     .col-md-7.form-review {
 
     margin: 10px 15px;
-    
+
 }
 }
     @media only screen and (max-width:570px){

@@ -41,7 +41,7 @@
                 <div class="quick-evaluate__user-business quick-evaluate__user-business--logged-out">
                     <img class="quick-evaluate__default-image" :src="[user!=null ? user.avatar : '/images/73x73.png']"  alt="Your profile picture">
                     <h2 class="quick-evaluate__label">
-                        Write a review
+                        Viết đánh giá của bạn
                     </h2>
                 </div>
                 <div class="quick-evaluate__rating">
@@ -94,7 +94,7 @@
                 <vcl-facebook/>
             </template>
             <template v-else>
-                <ReviewTeacher  v-for="review in reviewsTeacher" 
+                <ReviewTeacher  v-for="review in reviewsTeacher"
                                 :review="review"
                                 :key="review.id"
                                 @update-review="updateReview">
@@ -106,12 +106,12 @@
                 <div class="card card--related">
                     <div class="card-left">
                         <h3 class="title-company-w fs-20">Thông tin</h3>
-                        <p>Gender: {{teacherData.gender?'Male':'Female'}}</p>
-                        <p>birthday: {{teacherData.birthday}}</p>
-                        <p>address: {{teacherData.address}}</p>
-                        <p>phone: {{teacherData.phone}}</p>
-                        <p>specialize: {{teacherData.specialize}}</p>
-                        <p>email: {{teacherData.email}}</p>
+                        <p>Giới tính: {{teacherData.gender?'Male':'Female'}}</p>
+                        <p>Sinh nhật: {{teacherData.birthday}}</p>
+                        <p>Địa chỉ: {{teacherData.address}}</p>
+                        <p>Số điện thoại: {{teacherData.phone}}</p>
+                        <p>Chuyên môn: {{teacherData.specialize}}</p>
+                        <p>Email: {{teacherData.email}}</p>
                     </div>
                 </div>
                 <div class="card card--related">
@@ -176,7 +176,7 @@ import ReviewTeacher from '../review/layoutReviewDetailOfTeacher'
                         this.$router.replace('/not-found')
                     }
             })
-            
+
             $(document).ready(function() {
                 $(".fancybox-thumb").fancybox({
                     prevEffect	: 'none',
@@ -322,7 +322,7 @@ import ReviewTeacher from '../review/layoutReviewDetailOfTeacher'
             }
         }
     }
-    
+
 }
 
 @media (min-width: 481px) and (max-width: 769px) {

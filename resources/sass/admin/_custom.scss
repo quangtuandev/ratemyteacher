@@ -1,0 +1,58 @@
+// Here you can add other styles
+@import '~simple-line-icons/scss/simple-line-icons';
+
+@import '~bootstrap4c-chosen/dist/css/component-chosen';
+@import '~ion-rangeslider/css/ion.rangeSlider.css';
+
+// Fix mobile footer
+.app-footer {
+    flex: 0 0;
+    padding-top: map-get($spacers, 3);
+    padding-bottom: map-get($spacers, 3);
+}
+
+.remove-input {
+  cursor: pointer;
+  color: #dc3545;
+  margin-left: 5px;
+}
+
+.block-lang-title {
+  position: relative;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.block-lang-title:before {
+  background: #ccc;
+  border-radius: 12px;
+  content: "";
+  height: 1px;
+  left: 0;
+  position: absolute;
+  top: 29px;
+  width: 12rem;
+}
+
+// style for error validation special fields
+.chosen-container.error ul,
+.chosen-container.error a {
+    border-color: #f86c6b;
+}
+
+.bootstrap-tagsinput.error {
+    border-color: #f86c6b;
+}
+
+.loading-bar {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../../public/img/ajax-loader.gif");
+  background-position: 50% 50%;
+  background-color: rgba(255, 255, 255, 0.8);
+  background-repeat: no-repeat;
+}

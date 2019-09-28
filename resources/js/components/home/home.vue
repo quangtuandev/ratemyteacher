@@ -55,7 +55,7 @@
                         </div>
                         <div class="review-card__author" style="text-align:left">
                             <router-link :to="{name: 'detail_teacher', params:{ id: result.id }}">{{result.name}}</router-link>
-                            <br>specialize: {{result.specialize}}
+                            <br>Chuyên môn: {{result.specialize}}
                             <br>Email: {{result.email}}
                         </div>
                     </div>

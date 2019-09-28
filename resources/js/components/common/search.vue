@@ -38,7 +38,7 @@
                     </div>
                     <div class="review-card__author" style="text-align:left">
                         <router-link :to="{name: 'detail_teacher', params:{ id: result.id }}">{{result.name}}</router-link>
-                    <br>specialize: {{result.specialize}}
+                    <br>Chuyên môn: {{result.specialize}}
                         <br>Email: {{result.email}}
                     </div>
             </div>
@@ -119,7 +119,7 @@ import { get } from '../../helpers/api'
         border: 1px solid #e6ecf5;
         margin-bottom: 15px;
     }
-    
+
     .ui-block-title {
         padding: 23px 25px 18px;
         line-height: 1;
@@ -129,7 +129,7 @@ import { get } from '../../helpers/api'
         width: 100%;
         position: relative;
     }
-    
+
     .ui-block-title .title {
         color: #515365;
     }

@@ -51,7 +51,7 @@
                         <div class="loader"></div>
                     </div>
                     <div class="card-header">
-                        <div class="avatar">           
+                        <div class="avatar">
                             <img :src="infoUser.avatar">
                         </div>
                         <div class="over">
@@ -93,9 +93,9 @@
                             <button @click="deleteReview"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
                         </template>
                         <template v-else>
-                            <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> Drop heart</a>
+                            <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> Yêu thích</a>
                         </template>
-                        <a href="#"><i class="fa fa-share-square-o" aria-hidden="true"></i> Share</a>
+                        <a href="#"><i class="fa fa-share-square-o" aria-hidden="true"></i> Chia sẻ </a>
                     </div>
                 </div>
             </template>
@@ -129,7 +129,7 @@ import { getReview,deleteReview } from '../../router/router'
                 this.detailReviews = res.data.detail_review.review
                 this.infoUser = res.data.detail_review.info_review.user
                 this.infoTeacher = res.data.detail_review.info_review.teacher
-                moment.locale('en')
+                moment.locale('vi')
                 this.detailReviews.created = moment(this.detailReviews.created_at).format('MMMM Do YYYY, h:mm ')
                 this.loading = false
             })
@@ -142,7 +142,7 @@ import { getReview,deleteReview } from '../../router/router'
 
         },
         computed: mapState('auth', {
-            user: state => state.user,  
+            user: state => state.user,
         }),
         methods: {
             deleteReview(){
@@ -246,7 +246,7 @@ time{
                     font-size:50px;
                 }
             }
-            
+
         }
     }
 }
