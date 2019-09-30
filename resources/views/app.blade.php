@@ -9,6 +9,7 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     <link href="{{ mix('css/font.css') }}" rel="stylesheet">
     <link href="{{ mix('css/auth.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/main.min.css') }}" rel="stylesheet">
     <script>
         window.Laravel = {!! json_encode([
             'appName' => config('app.name'),
@@ -27,8 +28,8 @@
 
 <body>
     <div id="app">
-        
-    </div>    
+
+    </div>
     <script src="{{ mix('js/mo.min.js') }}"></script>
     <script src="{{ mix('js/app.js') }}"></script>
 

@@ -25,6 +25,7 @@ Route::group(['namespace' => 'Api','middleware' => ['xssProtection']], function 
     Route::post('check-exist', 'CommonController@checkExist');
 
     Route::group(['prefix' => 'teacher'], function () {
+        Route::get('/all/center', 'TeacherController@list');
         Route::get('/show/{id}', 'TeacherController@show');
         Route::get('/{id}/review', 'TeacherController@getReviewTeacher');
         Route::get('/{id}/over-view','TeacherController@getOverView');
@@ -40,10 +41,15 @@ Route::group(['namespace' => 'Api','middleware' => ['xssProtection']], function 
             Route::delete('/delete/{id}', 'ReviewTeacherController@deleteReviewTeacher');
         });
     });
-    
+
     Route::group(['prefix' => 'user'], function () {
         Route::get('/show/{id}', 'UserController@show');
         Route::get('/show/{userId}/review', 'UserController@getReview');
+    });
+
+    Route::group(['prefix' => 'centers'], function () {
+        Route::get('/', 'CenterController@index');
+        Route::get('/{id}', 'CenterController@show');
     });
 
     Route::group(['prefix' => 'file', 'as' => 'file'], function () {

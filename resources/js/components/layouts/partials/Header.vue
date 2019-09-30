@@ -13,27 +13,27 @@
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i>  Search</button>
     </form>
     <ul class="navbar-nav ml-auto">
-      <!-- <li class="nav-item">
-        <a class="nav-link" href="#">Write Review<span class="sr-only"></span></a>
-      </li> -->
+      <li class="nav-item">
+        <router-link :to="{ name: 'list_center' }" class="nav-link">Trung tâm</router-link>
+      </li>
       <template  v-if="!user">
         <li class="nav-item" >
-        <router-link :to="{ name: 'login' }" class="nav-link">Login</router-link>
+        <router-link :to="{ name: 'login' }" class="nav-link">Đăng nhập</router-link>
         <!-- <a class="nav-link" href="#">Login</a> -->
       </li>
-      <li class="nav-item">
-        <router-link :to="{ name: 'register' }" class="nav-link">Register</router-link>
+      <li class="nav-item teachers">
+        <router-link :to="{ name: 'register' }" class="nav-link">Đăng ký</router-link>
         <!-- <a class="nav-link" href="#">Register</a> -->
       </li>
       <!-- user logined -->
-      
+
       </template>
-      
+
       <template v-else>
         <li class="nav-item">
         <div class="avt-header">
-          <img :src="user.avatar" alt="your avatar" width="32px">
-        </div> 
+          <img :src="user.avatar" alt="your avatar" width="32px" class="rounded-circle">
+        </div>
       </li>
         <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -43,13 +43,10 @@
           <router-link class="dropdown-item" :to="{name:'profile_user',params:{ id:user.id }}">My profile</router-link>
           <a class="dropdown-item" href="#">My Account</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item"  v-on:click="handleLogout()">Logout  <i class="fas fa-sign-out-alt"></i></a>
+          <a class="dropdown-item"  v-on:click="handleLogout()">Đăng xuất  <i class="fas fa-sign-out-alt"></i></a>
         </div>
       </li>
       </template>
-      <li class="nav-item teachers">
-        <router-link :to="{ name: 'newteacher' }" class="nav-link">New Teacher</router-link>
-      </li>
     </ul>
   </div>
 </nav>
@@ -96,17 +93,17 @@ import { logout } from '../../../router/router'
 @media (min-width: 992px){
   .navbar{
     padding : .5rem 6em!important;
-    
+
   }
   .teachers{
     border: 1px solid #000;
-    border-radius: 3px; 
+    border-radius: 3px;
     padding: 0px 13px;
   }
   .teachers:hover{
     background: #000;
     border: 1px solid #fff;
-    border-radius: 3px; 
+    border-radius: 3px;
   }
   .teachers>a:hover{
     color: aliceblue!important;

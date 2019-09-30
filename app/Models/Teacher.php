@@ -6,7 +6,7 @@ use Nicolaslopezj\Searchable\SearchableTrait;
 use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * @SWG\Definition()
- */ 
+ */
 class Teacher extends BaseModel
 {
     use SoftDeletes,SearchableTrait;
@@ -50,7 +50,7 @@ class Teacher extends BaseModel
     }
 
     public function getReview($teacherId){
-        
+
         dd($this->reviews()->where('teacher_id',$teacherId)->get());
         return 0;
     }
@@ -70,5 +70,9 @@ class Teacher extends BaseModel
     public function media()
     {
         return $this->morphMany(Media::class, 'mediable');
+    }
+    public function centers()
+    {
+        return $this->belongsToMany(Center::class)->withTimestamps();
     }
 }

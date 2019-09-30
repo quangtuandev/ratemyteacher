@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Models\Teacher;
+use App\Models\Center;
 use App\Models\Media;
 
 class TeachersTableSeeder extends Seeder
@@ -15,11 +16,13 @@ class TeachersTableSeeder extends Seeder
     {
         Teacher::truncate();
         Media::truncate();
-        factory(Teacher::class, 10)->create()->each(function ($teacher) {
+        factory(Teacher::class, 15)->create()->each(function ($teacher) {
             $range = rand(2, 5);
             // Save photo for teacher
             $teacher->media()->saveMany(factory(Media::class, $range)->make());
+            $idCenter = Center::all()->random(1);
+            $teacher->centers()->attach($idCenter);
         });
-        
+
     }
 }

@@ -32,6 +32,10 @@ class RepositoryServiceProvider extends ServiceProvider
             \App\Repositories\Contracts\ReviewTeacherInterface::class,
             \App\Repositories\Eloquent\ReviewTeacherRepository::class,
         ],
+        'center' => [
+            \App\Repositories\Contracts\CenterInterface::class,
+            \App\Repositories\Eloquent\CenterRepository::class,
+        ],
     ];
     public function boot()
     {

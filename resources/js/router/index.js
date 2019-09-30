@@ -17,9 +17,13 @@ import SearchPage from '../components/common/search'
 import WriteReviewTeacher from '../components/review/newReviewTeacher'
 import DetailReviews from '../components/review/detailReviews'
 import EditReview from '../components/review/editReviewTeacher'
+import ListCenter from '../components/center/list'
+import ListTeacher from '../components/teacher/list'
 
 const router = [
     { path: '/', component: HomePage, name: 'homepage' },
+    { path: '/centers/:id', component: ListTeacher, name: 'list_teacher' },
+    { path: '/centers', component: ListCenter, name: 'list_center' },
     { path: '/search/:keyword', component: SearchPage, name: 'search' },
     { path: '/user-profile/:id', component: ProfileUser, name: 'profile_user' },
     { path: '/detail-teacher/:id', component: DetailTeacher, name: 'detail_teacher' },

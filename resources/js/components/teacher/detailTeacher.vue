@@ -360,8 +360,8 @@ import ReviewTeacher from '../review/layoutReviewDetailOfTeacher'
 .quick-evaluate--logged-in .quick-evaluate__user-business--logged-in{display:flex}
 .quick-evaluate--logged-in .quick-evaluate__user-business--logged-out{display:none}
 .quick-evaluate__name-label-wrapper{flex-direction:row;margin-left:16px}
-.quick-evaluate__default-image,.quick-evaluate__profile-image{position:relative;width:40px;height:40px}
-.quick-evaluate__default-image{margin-right:16px}
+.quick-evaluate__default-image,.quick-evaluate__profile-image{position:relative;width:40px;height:40px;border-radius:50%}
+.quick-evaluate__default-image{margin-right:10px}
 .quick-evaluate__profile-image{border-radius:50%;height:40px;background-color:#fff}
 .quick-evaluate__profile-name{font-weight:700}
 .quick-evaluate__label,.quick-evaluate__profile-name{font-size:16px;font-size:1rem;line-height:20px;line-height:1.25rem}

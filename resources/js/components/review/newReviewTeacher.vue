@@ -6,7 +6,7 @@
         />
         <div class="row">
             <div class="col-md-12">
-                <h1>Your comments on <router-link :to="{name:'profile_user' , params:{ id: teacherData.id }}">{{teacherData.name}}</router-link> teachers</h1>
+                <h1>Đánh giá của bạn về giảng viên <router-link :to="{name:'profile_user' , params:{ id: teacherData.id }}">{{teacherData.name}}</router-link></h1>
             </div>
         </div>
         <div class="row">
