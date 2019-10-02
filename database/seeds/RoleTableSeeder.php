@@ -13,6 +13,7 @@ class RoleTableSeeder extends Seeder
     public function run()
     {
         Role::truncate();
+        \DB::table('role_user')->truncate();
         $roles = [
             'admin',
             'user',
