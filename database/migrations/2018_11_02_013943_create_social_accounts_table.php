@@ -17,10 +17,13 @@ class CreateSocialAccountsTable extends Migration
             $table->increments('id');
             $table->string('provider_id');
             $table->string('provider');
-            $table->integer('user_id')->index();
+            $table->unsignedInteger('user_id')->index();
             $table->string('email')->nullable();
             $table->string('name')->nullable();
             $table->string('avatar')->nullable();
+            $table->foreign('user_id')
+            ->references('id')->on('users')
+            ->onDelete('cascade');
             $table->softDeletes();
             $table->timestamps();
         });

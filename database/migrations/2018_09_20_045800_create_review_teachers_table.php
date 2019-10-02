@@ -23,12 +23,12 @@ class CreateReviewTeachersTable extends Migration
             $table->string('rating');
             $table->unsignedInteger('user_id');
             $table->unsignedInteger('teacher_id');
-            // $table->foreign('user_id')
-            // ->references('id')->on('users')
-            // ->onDelete('cascade');
-            // $table->foreign('teacher_id')
-            // ->references('id')->on('teachers')
-            // ->onDelete('cascade');
+            $table->foreign('user_id')
+            ->references('id')->on('users')
+            ->onDelete('cascade');
+            $table->foreign('teacher_id')
+            ->references('id')->on('teachers')
+            ->onDelete('cascade');
             $table->softDeletes();
             $table->timestamps();
         });

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserCenterTable extends Migration
+class DropTableUserCenter extends Migration
 {
     /**
      * Run the migrations.
@@ -12,6 +12,17 @@ class CreateUserCenterTable extends Migration
      * @return void
      */
     public function up()
+    {
+        Schema::dropIfExists('user_center');
+
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
     {
         Schema::create('user_center', function (Blueprint $table) {
             $table->increments('id');
@@ -26,15 +37,5 @@ class CreateUserCenterTable extends Migration
             $table->softDeletes();
             $table->timestamps();
         });
-    }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('user_center');
     }
 }

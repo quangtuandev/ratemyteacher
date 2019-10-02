@@ -17,12 +17,12 @@ class CreateTeacherCenterTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('teacher_id');
             $table->unsignedInteger('center_id');
-            // $table->foreign('center_id')
-            // ->references('id')->on('centers')
-            // ->onDelete('cascade');
-            // $table->foreign('teacher_id')
-            // ->references('id')->on('teachers')
-            // ->onDelete('cascade');
+            $table->foreign('center_id')
+            ->references('id')->on('centers')
+            ->onDelete('cascade');
+            $table->foreign('teacher_id')
+            ->references('id')->on('teachers')
+            ->onDelete('cascade');
             $table->softDeletes();
             $table->timestamps();
         });
