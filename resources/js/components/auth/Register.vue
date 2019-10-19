@@ -14,53 +14,53 @@
             <span class="hasErrors"></span>
             <form class="form-signin" @submit.prevent="handleRegister" autocomplete="off" novalidate>
               <div class="form-label-group">
-                <input type="text" 
+                <input type="text"
                  data-vv-as="name"
-                 name="name" v-validate="'required'" 
-                 v-model="user.name" 
+                 name="name" v-validate="'required'"
+                 v-model="user.name"
                  id="inputname" class="form-control fix-height" placeholder="Your name" autofocus>
                 <label for="inputname">Your name</label>
               <span class="hasErrors">{{ errors.first('name') }}</span>
-              </div>  
+              </div>
 
               <div class="form-label-group">
-                <input type="email" 
-                data-vv-as="email" 
-                name="email" 
-                v-validate="'required|email|unique:users,email'" 
+                <input type="email"
+                data-vv-as="email"
+                name="email"
+                v-validate="'required|email|unique:users,email'"
                 v-model="user.email" id="inputEmail" class="form-control fix-height" placeholder="Email address" >
                 <label for="inputEmail">Email address</label>
               <span class="hasErrors">{{ errors.first('email') }}</span>
               </div>
 
               <div class="form-label-group">
-                <input type="password" ref="password" 
-                data-vv-as="password" 
-                name="password" 
-                v-validate="'required|min:6'" 
+                <input type="password" ref="password"
+                data-vv-as="password"
+                name="password"
+                v-validate="'required|min:6'"
                 v-model="user.password" id="inputPassword" class="form-control fix-height" placeholder="Password" >
                 <label for="inputPassword">Password</label>
               <span class="hasErrors">{{ errors.first('password') }}</span>
               </div>
 
               <div class="form-label-group">
-                <input type="date" 
-                data-vv-as="Birthday" 
-                name="Birthday" 
-                v-validate="'required'" 
+                <input type="date"
+                data-vv-as="Birthday"
+                name="Birthday"
+                v-validate="'required'"
                 v-model="user.birthday" id="inputbirthday" class="form-control fix-height" placeholder="Your Birthday" >
                 <label for="inputbirthday">Birthday</label>
               <span class="hasErrors">{{ errors.first('Birthday') }}</span>
               </div>
 
-              
+
               <div class="form-label-group">
                 <!-- <input type="text"  placeholder="Your Gender" required>-->
-                <label id="inputgender">Gender</label> 
-                <select 
-                data-vv-as="Gender" 
+                <label id="inputgender">Gender</label>
+                <select
+                data-vv-as="Gender"
                 name="gender"
-                 v-validate="'required'" 
+                 v-validate="'required'"
                  v-model="user.gender"  class="form-control fix-height">
                             <option v-for="gender in genders" :key="gender.id" :value="gender.value">
                                 {{ gender.name }}
@@ -76,7 +76,6 @@
               </div>
               <hr class="my-4">
               <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fa fa-google mr-2"></i> Sign in with Google</button>
-              <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fa fa-facebook-f mr-2"></i> Sign in with Facebook</button>
             </form>
           </div>
         </div>
@@ -136,7 +135,7 @@ export default {
             .catch(() => {})
         }
       },
-      
+
   }
 </script>
 

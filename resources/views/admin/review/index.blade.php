@@ -8,19 +8,11 @@
           {{-- {{ var_dump($users) }} --}}
         <!-- Page Heading -->
         <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-        @if(session()->get('flash_success'))
-            <div class="alert alert-success" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-
-            @if(is_array(json_decode(session()->get('flash_success'), true)))
-                {{ implode('', session()->get('flash_success')->all(':message<br/>')) }}
-            @else
-                {{ session()->get('flash_success') }}
+        <div class="flash-message">
+            @if(session('message'))
+                {{session('message')}}
             @endif
-            </div>
-        @endif
+          </div>
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
           <div class="card-header py-3">
@@ -48,7 +40,7 @@
                   </tr>
                 </tfoot>
                 <tbody>
-                    @foreach ($teachers as $item)
+                    @foreach ($reviews as $item)
                         <tr>
                             <td>{{ $item->name }}</td>
                             <td>{{ $item->email }}</td>
@@ -56,7 +48,7 @@
                             <td>{{ $item->created_at }}</td>
                             <td class="mr-auto mr-auto d-block text-center">
                                 <div class="btn-group btn-group-sm">
-                                    <a href="/detail-teacher/{{$item->id}}" target="_blank" class="btn btn-primary">
+                                    <a href="/reviews/{{$item->id}}" target="_blank" class="btn btn-primary">
                                         <i class="fas fa-eye" data-toggle="tooltip" data-placement="top"
                                             title="Xem"></i>
                                     </a>
@@ -96,7 +88,7 @@
                     cancelButtonText: 'Hủy bỏ',
                     showLoaderOnConfirm: true,
                     preConfirm: (hihi) => {
-                        const url = '/admin/teachers/'+id+'/delete'
+                        const url = '/admin/reviews/'+id+'/delete'
 
                         return fetch(url)
                         .then(response => {

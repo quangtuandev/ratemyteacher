@@ -10,7 +10,7 @@
         <div class="card card-signin">
           <div class="card-body">
             <h5 class="card-title text-center">Sign In</h5>
-            
+
             <form class="form-signin" @submit.prevent="handlelogin" novalidate>
               <div class="form-group" v-if="true">
                   <p class="hasErrors">
@@ -40,7 +40,6 @@
               <hr class="my-4">
 
               <button class="btn btn-lg btn-google btn-block text-uppercase"  @click.prevent="redirect('google')"><i class="fa fa-google mr-2"></i> Sign in with Google</button>
-              <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fa fa-facebook-f mr-2"></i> Sign in with Facebook</button>
             </form>
           </div>
         </div>
@@ -98,7 +97,7 @@ export default {
         }
     }
 }
-    
+
 </script>
 
 <style>

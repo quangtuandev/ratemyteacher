@@ -48,7 +48,7 @@
                   </tr>
                 </tfoot>
                 <tbody>
-                    @foreach ($teachers as $item)
+                    @foreach ($centers as $item)
                         <tr>
                             <td>{{ $item->name }}</td>
                             <td>{{ $item->email }}</td>
@@ -56,7 +56,7 @@
                             <td>{{ $item->created_at }}</td>
                             <td class="mr-auto mr-auto d-block text-center">
                                 <div class="btn-group btn-group-sm">
-                                    <a href="/detail-teacher/{{$item->id}}" target="_blank" class="btn btn-primary">
+                                    <a href="/user-profile/{{$item->id}}" target="_blank" class="btn btn-primary">
                                         <i class="fas fa-eye" data-toggle="tooltip" data-placement="top"
                                             title="Xem"></i>
                                     </a>
@@ -96,7 +96,7 @@
                     cancelButtonText: 'Hủy bỏ',
                     showLoaderOnConfirm: true,
                     preConfirm: (hihi) => {
-                        const url = '/admin/teachers/'+id+'/delete'
+                        const url = '/admin/centers/'+id+'/delete'
 
                         return fetch(url)
                         .then(response => {

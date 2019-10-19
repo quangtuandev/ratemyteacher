@@ -43,6 +43,18 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
             Route::get('/', 'UserController@index')->name('user.list');
             Route::get('{id?}/delete', 'UserController@destroy')->name('user.delete');
         });
+        Route::group(['prefix' => 'teachers'], function () {
+            Route::get('/', 'TeacherController@index')->name('teacher.list');
+            Route::get('{id?}/delete', 'TeacherController@destroy')->name('teacher.delete');
+        });
+        Route::group(['prefix' => 'reviews'], function () {
+            Route::get('/', 'ReviewController@index')->name('review.list');
+            Route::get('{id?}/delete', 'ReviewController@destroy')->name('review.delete');
+        });
+        Route::group(['prefix' => 'centers'], function () {
+            Route::get('/', 'CenterController@index')->name('center.list');
+            Route::get('{id?}/delete', 'CenterController@destroy')->name('center.delete');
+        });
     });
 });
 Route::get('/{vue_capture?}', function () {
