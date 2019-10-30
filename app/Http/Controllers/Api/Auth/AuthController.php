@@ -49,7 +49,8 @@ class AuthController extends ApiController
         }
 
         return $this->getData(function () use ($passport, $data, $user) {
-            $this->compacts['auth'] = $passport->requestGrantToken($data);
+            // $this->compacts['auth'] = $passport->requestGrantToken($data);
+            $this->compacts['auth'] = ['token_type' => "Bearer", 'access_token' => $passport->getTokenByUser($user) ];
             $this->compacts['user'] = $user;
 
         });
@@ -62,7 +63,7 @@ class AuthController extends ApiController
 
         try {
             $this->user->token()->revoke();
-            
+
         } catch (Exception $e) {
             return $this->responseFail();
         }
