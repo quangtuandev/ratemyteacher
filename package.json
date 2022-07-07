@@ -26,7 +26,7 @@
     "dependencies": {
         "fancybox": "^3.0.1",
         "font-awesome": "4.7.0",
-        "moment": "^2.23.0",
+        "moment": "^2.29.4",
         "noty": "^3.2.0-beta",
         "vee-validate": "^2.1.5",
         "vue-content-loading": "^1.5.3",
